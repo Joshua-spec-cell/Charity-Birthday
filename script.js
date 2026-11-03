@@ -23,9 +23,10 @@ const PHOTOS = [
    { src: "images/WhatsApp Image 2026-11-03 at 3.51.05 PM.jpeg", caption: "",                         ratio: "2 / 3" },
    { src: "images/WhatsApp Image 2026-11-03 at 3.52.26 PM (1).jpeg", caption: "",                         ratio: "4 / 5" },
    { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM.jpeg", caption: "",                         ratio: "3 / 4" },
-   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM.jpeg", caption: "",                         ratio: "1 / 1" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM (2).jpeg", caption: "",                         ratio: "1 / 1" },
    { src: "images/WhatsApp Image 2026-11-03 at 3.52.29 PM.jpeg", caption: "",                         ratio: "4 / 5" },
-  // { src: "images/charity-6.jpg", caption: "Add more like this", ratio: "3 / 4" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.26 PM.jpeg", caption: "",                         ratio: "4 / 5" },
+   // { src: "images/charity-6.jpg", caption: "Add more like this", ratio: "3 / 4" },
 ];
 
 /* 4 ▸ EXTRA VERSES for the “Unfold Another Verse” button (add as many as thou wilt). */
