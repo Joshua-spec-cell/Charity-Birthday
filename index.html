@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Birthday Tale Written for Lady Charity</title>
+<meta name="description" content="A little realm, prepared in honour of Lady Charity's birthday.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌹</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+<a class="skip-link" href="#hero">Skip to the celebration</a>
+
+<!-- =========================================================
+     0. LOADING SCREEN
+========================================================= -->
+<div class="loader" id="loader" role="status" aria-live="polite">
+  <div class="loader-mark"><span>C</span></div>
+  <p class="loader-text">Preparing a tale&hellip;</p>
+  <div class="loader-bar"><i id="loaderBar"></i></div>
+</div>
+
+<!-- =========================================================
+     1. THE INVITATION  (opening scene)
+========================================================= -->
+<section class="invite" id="invite" aria-label="Invitation">
+  <canvas class="particles" id="inviteCanvas" aria-hidden="true"></canvas>
+  <div class="petals" id="invitePetals" aria-hidden="true"></div>
+
+  <div class="invite-stage" id="inviteStage">
+    <p class="invite-eyebrow">A Special Invitation</p>
+    <h1 class="invite-title">For the one and only <em>Lady Charity</em></h1>
+    <p class="invite-sub">A little something has been prepared in thy honour&hellip;</p>
+
+    <div class="envelope" id="envelope" aria-hidden="true">
+      <div class="env-back"></div>
+      <div class="env-card"><span>Lady Charity</span></div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+      <div class="wax-seal"><span>C</span></div>
+    </div>
+
+    <button class="btn btn-gold" id="openLetter" type="button">Open Thy Letter</button>
+  </div>
+
+  <!-- The invitation card that appears once the envelope has opened -->
+  <div class="invite-card" id="inviteCard" hidden>
+    <div class="invite-card-inner">
+      <p class="ic-flourish" aria-hidden="true">&#10086;</p>
+      <h2 class="ic-title">By Royal Decree of the Heart</h2>
+      <!-- EDIT: invitation wording -->
+      <p>Lady Charity is most warmly invited to a celebration held entirely in her honour, upon the <strong>fourteenth of November</strong>.</p>
+      <p>Expect kind words, small surprises, a few verses written with care, and a quiet reminder that thou art deeply appreciated.</p>
+      <p>Come as thou art &mdash; for that is quite enough.</p>
+      <p class="ic-sign">Thy humble knight</p>
+      <button class="btn btn-gold" id="enterRealm" type="button">Enter the Celebration</button>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+<header class="site-header" id="siteHeader" hidden>
+  <a class="brand" href="#hero" aria-label="Back to the top"><span>C</span></a>
+  <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+    <i></i><i></i><i></i>
+  </button>
+  <nav class="site-nav" id="siteNav" aria-label="Main">
+    <a href="#letter">The Letter</a>
+    <a href="#memories">Memories</a>
+    <a href="#qualities">Celebrated</a>
+    <a href="#literary">Literary Corner</a>
+    <a href="#gifts">Gifts</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#toast">The Toast</a>
+  </nav>
+</header>
+
+<main id="main" hidden>
+
+<!-- =========================================================
+     3. HERO
+========================================================= -->
+<section class="hero" id="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="floaties" id="heroFloaties" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">A Birthday Tale</p>
+      <h2 class="hero-title">Happy Birthday, <em>Lady Charity!</em></h2>
+      <p class="hero-sub">The 14th of November &mdash; a day worth celebrating.</p>
+
+      <!-- Countdown (see BIRTHDAY in script.js to change the date) -->
+      <div class="countdown" id="countdown" aria-live="polite">
+        <div class="cd-grid" id="cdGrid">
+          <div><b id="cdD">00</b><span>days</span></div>
+          <div><b id="cdH">00</b><span>hours</span></div>
+          <div><b id="cdM">00</b><span>minutes</span></div>
+          <div><b id="cdS">00</b><span>seconds</span></div>
+        </div>
+        <p class="cd-message" id="cdMessage" hidden></p>
+      </div>
+
+      <p class="hero-note">
+        Today, the world gets to celebrate someone whose presence brings warmth, whose words carry a certain charm, and whose kindness speaks louder than she may realise. This little corner of the internet belongs to thee, Lady Charity.
+      </p>
+    </div>
+
+    <figure class="frame" id="heroFrame">
+      <div class="frame-ornament" aria-hidden="true"></div>
+      <div class="frame-photo">
+        <!-- ADD HER PHOTO: replace images/charity-hero.jpg with a portrait picture of Charity -->
+        <img src="images/charity-hero.jpg" alt="Portrait of Lady Charity" data-fallback="images/charity-hero.jpg" width="640" height="800">
+      </div>
+      <figcaption>Lady Charity</figcaption>
+    </figure>
+  </div>
+
+  <a class="scroll-cue" href="#letter" aria-label="Scroll to the letter"><span></span></a>
+</section>
+
+<!-- =========================================================
+     4. THE LETTER
+========================================================= -->
+<section class="section letter-section" id="letter">
+  <div class="section-head reveal">
+    <p class="eyebrow dark">A Letter, Written by Hand</p>
+    <h2>A Letter to Lady Charity</h2>
+  </div>
+
+  <div class="parchment reveal" id="parchment">
+    <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span>
+    <span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+
+    <!-- EDIT: the letter. Each <p> is typed out one after another. -->
+    <div class="letter-body" id="letterBody">
+      <p class="letter-greet">To Lady Charity,</p>
+      <p>If words could capture the entirety of a person, I suspect even the finest writers would find themselves short of words when writing about thee.</p>
+      <p>Thou art a lovely blend of kindness, intelligence, humour and warmth. There is something rather special about the way thou carriest thyself &mdash; the way thou carest, the way thou listenest, and the way thou makest even the simplest conversations worth looking forward to.</p>
+      <p>I admire thy love for learning, thy passion for language and literature, and the dedication thou bringest to teaching. It is quite fitting that one who appreciates words so dearly should also possess a way of making them feel meaningful.</p>
+      <p>I especially admire that thou puttest God first, and that even in thy kindness, thou remindest those around thee to take care of themselves, remain focused and keep moving forward.</p>
+      <p>May this new year of thy life bring thee closer to all that thou prayest for. May God guide thy steps, strengthen thy faith, reward thy efforts and grant thee beautiful reasons to smile.</p>
+      <p>Never lose the qualities that make thee uniquely thee. The world needs more of that.</p>
+      <p>Happy Birthday, Charity. May thy story continue to be a beautiful one.</p>
+      <p class="letter-sign">With warmest wishes,<br><span>Thy humble knight</span></p>
+    </div>
+  </div>
+
+  <div class="letter-actions">
+    <button class="btn btn-ghost-dark" id="revealLetter" type="button">Reveal the whole letter</button>
+    <button class="btn btn-ghost-dark" id="replayLetter" type="button" hidden>Watch it being written again</button>
+  </div>
+</section>
+
+<!-- =========================================================
+     5. MEMORIES
+========================================================= -->
+<section class="section memories" id="memories">
+  <div class="section-head reveal">
+    <p class="eyebrow">A Chapter of Memories</p>
+    <h2>Little Moments, Lasting Memories</h2>
+    <p class="section-lead">Turn each page over to read what it holds.</p>
+  </div>
+
+  <!-- EDIT / ADD MEMORY CARDS: copy any <article class="memory"> block below.
+       Only write moments that truly happened. -->
+  <div class="memory-grid">
+
+    <article class="memory reveal" tabindex="0" role="button" aria-pressed="false" data-kind="stars">
+      <div class="memory-inner">
+        <div class="memory-face memory-front">
+          <div class="mv mv-sky" aria-hidden="true">
+            <div class="sky-stars" id="skyStars"></div>
+            <div class="moon"></div>
+          </div>
+          <h3>The Night We Watched the Stars</h3>
+          <span class="memory-hint">Tap to read</span>
+        </div>
+        <div class="memory-face memory-back">
+          <h3>The Night We Watched the Stars</h3>
+          <p>Some conversations are worth staying awake for. And then there are nights when the sky itself becomes part of the conversation. That 2 a.m. meteor shower will remain one of those little moments worth remembering.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="memory reveal" tabindex="0" role="button" aria-pressed="false" data-kind="kesha">
+      <div class="memory-inner">
+        <div class="memory-face memory-front">
+          <div class="mv mv-scrap" aria-hidden="true">
+            <span class="tape"></span>
+            <svg viewBox="0 0 200 90" class="doodle"><path d="M8 70 Q 30 20 52 62 T 96 58 T 140 56 T 188 30" /><path class="d2" d="M20 24 l6 10 l-12 0 z"/><circle cx="160" cy="70" r="7"/><path class="d3" d="M120 14 l4 8 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1z"/></svg>
+            <b class="scrap-word">Kesha</b>
+          </div>
+          <h3>The Kesha Chronicles</h3>
+          <span class="memory-hint">Tap to read</span>
+        </div>
+        <div class="memory-face memory-back">
+          <h3>The Kesha Chronicles</h3>
+          <p>From the little jokes and unexpected moments to the games, the laughter and all the small adventures in between, thou hast a way of making ordinary moments rather memorable.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="memory reveal" tabindex="0" role="button" aria-pressed="false" data-kind="chat">
+      <div class="memory-inner">
+        <div class="memory-face memory-front">
+          <div class="mv mv-chat" aria-hidden="true">
+            <span class="bubble b1">Just a quick message&hellip;</span>
+            <span class="bubble b2">&hellip;and somehow it&rsquo;s a whole story now</span>
+            <span class="bubble b3"><i></i><i></i><i></i></span>
+          </div>
+          <h3>The Conversations That Never Seem Short</h3>
+          <span class="memory-hint">Tap to read</span>
+        </div>
+        <div class="memory-face memory-back">
+          <h3>The Conversations That Never Seem Short</h3>
+          <p>Somehow, a simple conversation can turn into a collection of messages, laughter and stories. It is rather amusing how time can pass without either party noticing.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="memory reveal" tabindex="0" role="button" aria-pressed="false" data-kind="heart">
+      <div class="memory-inner">
+        <div class="memory-face memory-front">
+          <div class="mv mv-heart" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="glow-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <i class="tw t1"></i><i class="tw t2"></i><i class="tw t3"></i><i class="tw t4"></i><i class="tw t5"></i>
+          </div>
+          <h3>The Little Things That Matter</h3>
+          <span class="memory-hint">Tap to read</span>
+        </div>
+        <div class="memory-face memory-back">
+          <h3>The Little Things That Matter</h3>
+          <p>From checking whether I arrived home safely to reminding me not to sacrifice sleep for conversations, I have noticed the thoughtful little things. They may seem small, but they say quite a lot about a person.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     6. QUALITIES
+========================================================= -->
+<section class="section qualities" id="qualities">
+  <div class="section-head reveal">
+    <p class="eyebrow dark">Worth Celebrating</p>
+    <h2>A Few Things Worth Celebrating About Thee</h2>
+    <p class="section-lead dark">Tap a card to see why.</p>
+  </div>
+
+  <div class="quality-grid">
+    <button class="quality reveal" type="button" aria-expanded="false">
+      <span class="q-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+      <h3>A Heart of Kindness</h3>
+      <p>For the care thou showest and the thoughtfulness that comes so naturally.</p>
+    </button>
+    <button class="quality reveal" type="button" aria-expanded="false">
+      <span class="q-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+      <h3>A Mind That Loves to Learn</h3>
+      <p>For thy curiosity, knowledge and appreciation of the beauty of words.</p>
+    </button>
+    <button class="quality reveal" type="button" aria-expanded="false">
+      <span class="q-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/><path d="M22 10v6"/></svg></span>
+      <h3>The Teacher in Thee</h3>
+      <p>For the patience and passion thou bringest to teaching, and the way thou dost inspire learning.</p>
+    </button>
+    <button class="quality reveal" type="button" aria-expanded="false">
+      <span class="q-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg></span>
+      <h3>A Joyful Spirit</h3>
+      <p>For thy humour, playful nature and ability to make conversations lively.</p>
+    </button>
+    <button class="quality reveal" type="button" aria-expanded="false">
+      <span class="q-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2h2v6h6v2h-6v12h-2V10H5V8h6z"/></svg></span>
+      <h3>Faith at the Centre</h3>
+      <p>For keeping God first and allowing faith to guide thy journey.</p>
+    </button>
+    <button class="quality reveal" type="button" aria-expanded="false">
+      <span class="q-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"/></svg></span>
+      <h3>A Thoughtful Soul</h3>
+      <p>For noticing the little things and caring in ways that matter.</p>
+    </button>
+  </div>
+</section>
+
+<!-- =========================================================
+     7. LITERARY CORNER
+========================================================= -->
+<section class="section literary" id="literary">
+  <div class="inkfield" id="inkfield" aria-hidden="true"></div>
+  <div class="section-head reveal">
+    <p class="eyebrow">The Literary Corner</p>
+    <h2>For a Lady Who Understands the Beauty of Words</h2>
+  </div>
+
+  <div class="library">
+    <div class="paper reveal">
+      <p class="paper-label">A verse, composed for thee</p>
+      <!-- EDIT: the opening poem. More verses live in script.js (VERSES). -->
+      <div class="verse" id="verse" aria-live="polite">
+        <p>Of all the tales that time may write,<br>Some souls make ordinary days bright.<br>With gentle words and a thoughtful heart,<br>Thou makest the simplest moments art.</p>
+        <p>May every chapter bring thee grace,<br>And may joy forever find its place.<br>May faith light every path thou tread,<br>And blessings crown the days ahead.</p>
+      </div>
+      <button class="btn btn-burgundy" id="anotherVerse" type="button">Unfold Another Verse</button>
+    </div>
+
+    <div class="dictionary reveal">
+      <p class="paper-label light">The Royal Dictionary</p>
+      <p class="dict-lead">Tap a phrase to learn what it means in modern English.</p>
+      <div class="dict-list" id="dictList"></div>
+      <div class="dict-pop" id="dictPop" role="status" aria-live="polite" hidden>
+        <small>In modern English</small>
+        <p id="dictPopText"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     8. GIFTS
+========================================================= -->
+<section class="section gifts" id="gifts">
+  <div class="section-head reveal">
+    <p class="eyebrow dark">Birthday Surprises</p>
+    <h2>A Few Gifts Hidden in This Little Realm</h2>
+  </div>
+
+  <div class="gift-grid">
+
+    <!-- Surprise One: A Wish for Thee -->
+    <div class="gift reveal">
+      <h3>A Wish for Thee</h3>
+      <button class="gift-env" id="wishEnv" type="button" aria-expanded="false" aria-label="Open the sealed envelope">
+        <span class="ge-back"></span>
+        <span class="ge-letter"><b>A Wish for Thee</b>
+          <!-- EDIT: the wish -->
+          <em>May thy days be gentle, thy heart be light, and every quiet prayer be answered in its perfect time. Thou art cherished far beyond what words can hold.</em>
+        </span>
+        <span class="ge-front"></span>
+        <span class="ge-flap"></span>
+        <span class="ge-seal">C</span>
+      </button>
+      <p class="gift-hint" id="wishHint">Tap the envelope</p>
+    </div>
+
+    <!-- Surprise Two: Make a Wish -->
+    <div class="gift reveal">
+      <h3>Make a Wish</h3>
+      <div class="cake" id="cake" aria-label="Birthday cake with candles">
+        <div class="candles">
+          <button class="candle" type="button" aria-label="Blow out candle 1"><i class="flame"></i><i class="smoke"></i><i class="wick"></i><i class="stick"></i></button>
+          <button class="candle" type="button" aria-label="Blow out candle 2"><i class="flame"></i><i class="smoke"></i><i class="wick"></i><i class="stick"></i></button>
+          <button class="candle" type="button" aria-label="Blow out candle 3"><i class="flame"></i><i class="smoke"></i><i class="wick"></i><i class="stick"></i></button>
+          <button class="candle" type="button" aria-label="Blow out candle 4"><i class="flame"></i><i class="smoke"></i><i class="wick"></i><i class="stick"></i></button>
+          <button class="candle" type="button" aria-label="Blow out candle 5"><i class="flame"></i><i class="smoke"></i><i class="wick"></i><i class="stick"></i></button>
+        </div>
+        <div class="cake-top"></div>
+        <div class="cake-mid"></div>
+        <div class="cake-base"></div>
+        <div class="cake-plate"></div>
+      </div>
+      <p class="gift-hint" id="cakeHint">Tap each candle to blow it out</p>
+      <p class="wish-msg" id="wishMsg" hidden>May the wishes held quietly in thy heart find their way into reality, in God&rsquo;s perfect time.</p>
+      <button class="btn btn-ghost-dark small" id="relight" type="button" hidden>Light the candles again</button>
+    </div>
+
+    <!-- Surprise Three: Jar of Compliments -->
+    <div class="gift reveal">
+      <h3>A Jar of Compliments</h3>
+      <button class="jar" id="jar" type="button" aria-label="Draw a note from the jar">
+        <span class="jar-lid"></span>
+        <span class="jar-glass">
+          <i class="note n1"></i><i class="note n2"></i><i class="note n3"></i><i class="note n4"></i><i class="note n5"></i><i class="note n6"></i>
+        </span>
+      </button>
+      <div class="note-pop" id="notePop" aria-live="polite"><p id="noteText">Tap the jar to draw a note.</p></div>
+      <p class="gift-hint">Tap as often as thou likest</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     9. GALLERY
+========================================================= -->
+<section class="section gallery" id="gallery">
+  <div class="section-head reveal">
+    <p class="eyebrow">The Gallery</p>
+    <h2>A Gallery Worthy of the Lady</h2>
+    <!-- ADD PHOTOS: edit the PHOTOS list at the top of script.js (images/charity-1.jpg … charity-5.jpg) -->
+    <p class="section-lead">A few frames worth keeping. Tap any one to see it larger.</p>
+  </div>
+  <div class="masonry" id="masonry"></div>
+</section>
+
+<!-- =========================================================
+     11. THE TOAST
+========================================================= -->
+<section class="toast" id="toast">
+  <canvas class="particles" id="toastCanvas" aria-hidden="true"></canvas>
+  <div class="petals" id="toastPetals" aria-hidden="true"></div>
+  <div class="toast-inner reveal">
+    <p class="eyebrow">A Birthday Toast</p>
+    <h2>To Another Beautiful Chapter</h2>
+    <!-- EDIT: the closing message -->
+    <p>May this new chapter be filled with answered prayers, unexpected blessings, genuine laughter, beautiful discoveries and countless reasons to give thanks.</p>
+    <p>May thy faith remain steadfast, thy heart remain joyful, and thy dreams find room to flourish.</p>
+    <p>Keep being wonderfully thee, Lady Charity.</p>
+    <p class="toast-final">Happy Birthday once more! &#10084;&#65039;</p>
+    <button class="btn btn-gold big" id="sparkle" type="button">Make the Night Sparkle</button>
+  </div>
+  <footer class="foot">Made with care, for Lady Charity.</footer>
+</section>
+
+</main>
+
+<!-- =========================================================
+     OVERLAYS & FLOATING CONTROLS
+========================================================= -->
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<div class="celebrate" id="celebrate" hidden role="dialog" aria-modal="true" aria-label="Birthday celebration">
+  <div class="celebrate-inner">
+    <p class="cel-eyebrow">Happy Birthday</p>
+    <h2 id="celTitle">14th November &mdash; A day the world was blessed with Lady Charity.</h2>
+    <button class="btn btn-gold" id="celClose" type="button">Return to the Realm</button>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" type="button" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo">&#8249;</button>
+  <figure class="lb-fig"><div class="lb-img" id="lbImg"></div><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo">&#8250;</button>
+</div>
+
+<!-- Music player. Put thy song in music/birthday-song.mp3 (see MUSIC in script.js) -->
+<div class="player" id="player" hidden>
+  <button class="player-fab" id="playerFab" type="button" aria-expanded="false" aria-controls="playerPanel" aria-label="Open music player">
+    <span class="eq" id="eqFab" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <svg class="note-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  </button>
+  <div class="player-panel" id="playerPanel" hidden>
+    <p class="pp-title" id="songTitle">Birthday Song</p>
+    <p class="pp-status" id="songStatus">Tap play when thou art ready.</p>
+    <div class="pp-row">
+      <button class="pp-play" id="ppPlay" type="button" aria-label="Play">
+        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+      </button>
+      <div class="eq big" id="eqPanel" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <label class="pp-label" for="ppSeek">Progress <span id="ppTime">0:00 / 0:00</span></label>
+    <input id="ppSeek" type="range" min="0" max="100" value="0" step="0.1">
+    <label class="pp-label" for="ppVol">Volume</label>
+    <input id="ppVol" type="range" min="0" max="1" value="0.7" step="0.01">
+  </div>
+  <audio id="audio" preload="none" loop></audio>
+</div>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>&uarr;</button>
+
+<script src="script.js"></script>
+</body>
+</html>
