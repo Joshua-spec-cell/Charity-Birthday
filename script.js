@@ -15,11 +15,16 @@ const MUSIC = { src: "music/Joe Hisaishi Merry Go Round of Life from Howls Movin
 /* 3 ▸ THE GALLERY.  Add, remove or reorder photographs here.
        ratio only affects the placeholder shown until a real photo exists. */
 const PHOTOS = [
-  { src: "images/charity-1.jpg", caption: "A moment worth framing", ratio: "4 / 5" },
-  { src: "images/charity-2.jpg", caption: "Radiant, as ever",        ratio: "1 / 1" },
-  { src: "images/charity-3.jpg", caption: "",                         ratio: "3 / 4" },
-  { src: "images/charity-4.jpg", caption: "Grace in every frame",     ratio: "4 / 5" },
-  { src: "images/charity-5.jpg", caption: "",                         ratio: "1 / 1" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.50.57 PM.jpeg", caption: "A moment worth framing", ratio: "4 / 5" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.01 PM.jpeg", caption: "Radiant, as ever",        ratio: "1 / 1" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.02 PM.jpeg", caption: "",                         ratio: "3 / 4" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.03 PM (1).jpeg", caption: "Grace in every frame",     ratio: "4 / 5" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.04 PM.jpeg", caption: "",                         ratio: "1 / 1" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.51.05 PM.jpeg", caption: "",                         ratio: "2 / 3" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.26 PM (1).jpeg", caption: "",                         ratio: "4 / 5" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM.jpeg", caption: "",                         ratio: "3 / 4" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM.jpeg", caption: "",                         ratio: "1 / 1" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.29 PM.jpeg", caption: "",                         ratio: "4 / 5" },
   // { src: "images/charity-6.jpg", caption: "Add more like this", ratio: "3 / 4" },
 ];
 
