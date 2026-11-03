@@ -32,7 +32,7 @@ const PHOTOS = [
 /* 4 ▸ EXTRA VERSES for the “Unfold Another Verse” button (add as many as thou wilt). */
 const VERSES = [
   "Let candles glow and bells be rung,\nFor one whose praises should be sung.\nThy kindness, like a lantern's flame,\nLights every heart that learns thy name.",
-  "A year is but a chapter turned,\nAnd thine, dear lady, hath been earned\nWith patient faith and steady grace —\nMay joy now find its resting place.",
+  "A year is but a chapter turned,\nAnd thine, dear lady, hath been earned\nWith patient faith and steady grace \nMay joy now find its resting place.",
   "If verse could ever pay thee due,\nThe poets would require anew\nA thousand pens, a thousand years\nTo praise what thy kind heart endears.",
   "May mornings greet thee, soft and gold,\nAnd evenings leave thee warm, not cold;\nMay every prayer thy heart hath prayed\nBe answered, gently, unafraid.",
   "Thou lovest words; so here are three:\nBe blessed, be bright, be wholly free.\nAnd when the year its tale hath told,\nMay thy next chapter be pure gold."
