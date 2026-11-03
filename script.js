@@ -15,17 +15,17 @@ const MUSIC = { src: "music/Joe Hisaishi Merry Go Round of Life from Howls Movin
 /* 3 ▸ THE GALLERY.  Add, remove or reorder photographs here.
        ratio only affects the placeholder shown until a real photo exists. */
 const PHOTOS = [
-  { src: "images/WhatsApp Image 2026-11-03 at 3.50.57 PM.jpeg", caption: "A moment worth framing", ratio: "4 / 5" },
-  { src: "images/WhatsApp Image 2026-11-03 at 3.51.01 PM.jpeg", caption: "Radiant, as ever",        ratio: "1 / 1" },
-  { src: "images/WhatsApp Image 2026-11-03 at 3.51.02 PM.jpeg", caption: "",                         ratio: "3 / 4" },
-  { src: "images/WhatsApp Image 2026-11-03 at 3.51.03 PM (1).jpeg", caption: "Grace in every frame",     ratio: "4 / 5" },
-  { src: "images/WhatsApp Image 2026-11-03 at 3.51.04 PM.jpeg", caption: "",                         ratio: "1 / 1" },
-   { src: "images/WhatsApp Image 2026-11-03 at 3.51.05 PM.jpeg", caption: "",                         ratio: "2 / 3" },
-   { src: "images/WhatsApp Image 2026-11-03 at 3.52.26 PM (1).jpeg", caption: "",                         ratio: "4 / 5" },
-   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM.jpeg", caption: "",                         ratio: "3 / 4" },
-   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM (2).jpeg", caption: "",                         ratio: "1 / 1" },
-   { src: "images/WhatsApp Image 2026-11-03 at 3.52.29 PM.jpeg", caption: "",                         ratio: "4 / 5" },
-   { src: "images/WhatsApp Image 2026-11-03 at 3.52.26 PM.jpeg", caption: "",                         ratio: "4 / 5" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.50.57 PM.jpeg", caption: "A moment worth framing.", ratio: "4 / 5" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.01 PM.jpeg", caption: "Radiant, as ever.",        ratio: "1 / 1" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.02 PM.jpeg", caption: "If joy had a portrait.",                         ratio: "3 / 4" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.03 PM (1).jpeg", caption: "Grace in every frame.",     ratio: "4 / 5" },
+  { src: "images/WhatsApp Image 2026-11-03 at 3.51.04 PM.jpeg", caption: "A quiet kind of magic.",                         ratio: "1 / 1" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.51.05 PM.jpeg", caption: "The art of simply being.",                         ratio: "2 / 3" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.26 PM (1).jpeg", caption: "No grand occasion required.",                         ratio: "4 / 5" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM.jpeg", caption: "Timeless in every frame.",                         ratio: "3 / 4" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.27 PM (2).jpeg", caption: "Time may move, but certain moments remain golden.",                         ratio: "1 / 1" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.29 PM.jpeg", caption: "A fleeting moment, an everlasting impression.",                         ratio: "4 / 5" },
+   { src: "images/WhatsApp Image 2026-11-03 at 3.52.26 PM.jpeg", caption: "Some people make ordinary moments remarkable.",                         ratio: "4 / 5" },
    // { src: "images/charity-6.jpg", caption: "Add more like this", ratio: "3 / 4" },
 ];
 
