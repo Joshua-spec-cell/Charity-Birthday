@@ -10,7 +10,7 @@
 const BIRTHDAY = { month: 11, day: 14 };
 
 /* 2 ▸ THE MUSIC.  Put thy song at music/birthday-song.mp3 (or change the path). */
-const MUSIC = { src: "music/birthday-song.mp3", title: "Birthday Song", volume: 0.7 };
+const MUSIC = { src: "music/Joe Hisaishi Merry Go Round of Life from Howls Moving Castle.mp3", title: "Birthday Song", volume: 0.7 };
 
 /* 3 ▸ THE GALLERY.  Add, remove or reorder photographs here.
        ratio only affects the placeholder shown until a real photo exists. */
